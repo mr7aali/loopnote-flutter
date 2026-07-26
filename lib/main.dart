@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import 'app_theme.dart';
+
 void main() {
   return runApp(const MyApp());
 }
@@ -18,24 +20,18 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
 
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: AppTheme.light,
       home: Scaffold(
         body: Center(child: Text("Hello World")),
         appBar: AppBar(
           title: Text("Home"),
           leading: Icon(Icons.menu),
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
-          centerTitle: true,
-          elevation: 5,
-          shadowColor: Colors.black,
-          toolbarHeight: 70,
           toolbarOpacity: 1.0,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(30),
             child: Container(
-              color: Colors.blueAccent,
+              color: AppColors.highlightColor,
               width: MediaQuery.of(context).size.width,
               //   height: 50,
               child: Center(

@@ -9,6 +9,7 @@ These palettes are designed for clean interfaces with readable text, calm surfac
 - [Quick Recommendation](#quick-recommendation)
 - [Palette Overview](#palette-overview)
 - [How To Use These Palettes](#how-to-use-these-palettes)
+- [Naming Convention](#naming-convention)
 - [1. Calm Blue](#1-calm-blue)
 - [2. Fresh Teal](#2-fresh-teal)
 - [3. Indigo Sky](#3-indigo-sky)
@@ -19,9 +20,9 @@ These palettes are designed for clean interfaces with readable text, calm surfac
 
 ## Quick Recommendation
 
-For a professional task management or dashboard product, start with **Calm Blue**.
+For this app, start with **Fresh Teal**.
 
-It gives the interface a modern SaaS look, keeps content easy to scan, and works well for sidebars, cards, buttons, task states, analytics, and admin screens.
+It gives the interface a clean and friendly look, keeps the product calm, and works well for productivity screens, task cards, navigation, and simple dashboard layouts.
 
 ## Palette Overview
 
@@ -48,6 +49,29 @@ Use each palette as a full UI system rather than selecting random colors individ
 | Secondary text | Metadata, descriptions, helper labels |
 | Border | Dividers, inputs, table borders, card outlines |
 | Accent | Highlights, charts, empty states, small visual details |
+
+## Naming Convention
+
+Use **meaningful role-based names** in code. Do not name variables after the current color.
+
+Good names describe the job of the color:
+
+| Good Name | Why It Is Better |
+| --- | --- |
+| `mainBrandColor` | Main identity color for the app |
+| `primaryButtonHoverColor` | Hover color for the main action button |
+| `pageBackgroundColor` | Background for full app pages |
+| `cardBackgroundColor` | Background for cards, sheets, and panels |
+| `sidebarBackgroundColor` | Background for side navigation |
+| `mainTextColor` | Main readable text color |
+| `secondaryTextColor` | Muted helper text color |
+| `borderColor` | Borders, dividers, and input outlines |
+| `highlightColor` | Small accents, selected states, and highlights |
+| `successColor` | Completed, saved, or successful states |
+| `warningColor` | Warning or attention states |
+| `errorColor` | Error and destructive states |
+
+Avoid names like `tealColor`, `blueButton`, or `redText`. If the color changes later, those names become confusing.
 
 ## 1. Calm Blue
 
@@ -171,18 +195,19 @@ Use Soft Purple for creative productivity tools, AI workspaces, planning apps, a
 
 ## Implementation Tokens
 
-Use this naming structure when adding the palette to CSS, Flutter theme files, design tokens, or component libraries.
+Use this naming structure when adding the **Fresh Teal** palette to CSS, Flutter theme files, design tokens, or component libraries.
 
 ```css
 :root {
-  --color-primary: #2563EB;
-  --color-primary-hover: #1D4ED8;
-  --color-background: #F8FAFC;
-  --color-surface: #FFFFFF;
-  --color-sidebar: #EFF6FF;
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #64748B;
-  --color-border: #E2E8F0;
+  --color-main-brand: #0D9488;
+  --color-primary-button-hover: #0F766E;
+  --color-page-background: #F8FAFA;
+  --color-card-background: #FFFFFF;
+  --color-sidebar-background: #F0FDFA;
+  --color-main-text: #134E4A;
+  --color-secondary-text: #64748B;
+  --color-border: #CCFBF1;
+  --color-highlight: #14B8A6;
   --color-success: #16A34A;
   --color-warning: #F59E0B;
   --color-error: #DC2626;
@@ -191,17 +216,18 @@ Use this naming structure when adding the palette to CSS, Flutter theme files, d
 
 ```dart
 class AppColors {
-  static const primary = Color(0xFF2563EB);
-  static const primaryHover = Color(0xFF1D4ED8);
-  static const background = Color(0xFFF8FAFC);
-  static const surface = Color(0xFFFFFFFF);
-  static const sidebar = Color(0xFFEFF6FF);
-  static const textPrimary = Color(0xFF0F172A);
-  static const textSecondary = Color(0xFF64748B);
-  static const border = Color(0xFFE2E8F0);
-  static const success = Color(0xFF16A34A);
-  static const warning = Color(0xFFF59E0B);
-  static const error = Color(0xFFDC2626);
+  static const mainBrandColor = Color(0xFF0D9488);
+  static const primaryButtonHoverColor = Color(0xFF0F766E);
+  static const pageBackgroundColor = Color(0xFFF8FAFA);
+  static const cardBackgroundColor = Color(0xFFFFFFFF);
+  static const sidebarBackgroundColor = Color(0xFFF0FDFA);
+  static const mainTextColor = Color(0xFF134E4A);
+  static const secondaryTextColor = Color(0xFF64748B);
+  static const borderColor = Color(0xFFCCFBF1);
+  static const highlightColor = Color(0xFF14B8A6);
+  static const successColor = Color(0xFF16A34A);
+  static const warningColor = Color(0xFFF59E0B);
+  static const errorColor = Color(0xFFDC2626);
 }
 ```
 
@@ -213,4 +239,3 @@ class AppColors {
 - Use borders lightly to separate content without making the interface feel heavy.
 - Reserve success, warning, and error colors for status feedback.
 - Test text contrast before shipping, especially when using colored text on tinted backgrounds.
-
