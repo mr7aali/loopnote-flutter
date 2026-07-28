@@ -102,6 +102,9 @@ class AppTheme {
       fontFamily: 'Poppins',
       scaffoldBackgroundColor: AppColors.pageBackgroundColor,
       colorScheme: colorScheme,
+      disabledColor: AppColors.disabledTextColor,
+      splashColor: AppColors.splashColor,
+      highlightColor: AppColors.overlayColor,
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.topBarBackgroundColor,
         foregroundColor: AppColors.inverseTextColor,
@@ -120,6 +123,25 @@ class AppTheme {
         selectedItemColor: AppColors.selectedNavigationItemColor,
         unselectedItemColor: AppColors.unselectedNavigationItemColor,
         backgroundColor: AppColors.bottomBarBackgroundColor,
+      ),
+      navigationBarTheme: const NavigationBarThemeData(
+        backgroundColor: AppColors.bottomBarBackgroundColor,
+        indicatorColor: AppColors.selectedNavigationBackgroundColor,
+        labelTextStyle: WidgetStatePropertyAll(
+          TextStyle(color: AppColors.secondaryTextColor),
+        ),
+        iconTheme: WidgetStatePropertyAll(
+          IconThemeData(color: AppColors.secondaryTextColor),
+        ),
+      ),
+      drawerTheme: const DrawerThemeData(
+        backgroundColor: AppColors.sidebarBackgroundColor,
+      ),
+      listTileTheme: const ListTileThemeData(
+        iconColor: AppColors.secondaryTextColor,
+        textColor: AppColors.mainTextColor,
+        selectedColor: AppColors.mainBrandColor,
+        selectedTileColor: AppColors.selectedNavigationBackgroundColor,
       ),
       cardTheme: const CardThemeData(
         color: AppColors.cardBackgroundColor,
@@ -152,6 +174,49 @@ class AppTheme {
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: AppColors.errorColor, width: 1.5),
         ),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        checkColor: const WidgetStatePropertyAll(AppColors.inverseTextColor),
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return AppColors.disabledBackgroundColor;
+          }
+          if (states.contains(WidgetState.selected)) {
+            return AppColors.mainBrandColor;
+          }
+          return AppColors.transparentColor;
+        }),
+        side: const BorderSide(color: AppColors.borderColor),
+      ),
+      switchTheme: SwitchThemeData(
+        thumbColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return AppColors.disabledTextColor;
+          }
+          if (states.contains(WidgetState.selected)) {
+            return AppColors.mainBrandColor;
+          }
+          return AppColors.cardBackgroundColor;
+        }),
+        trackColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return AppColors.disabledBackgroundColor;
+          }
+          if (states.contains(WidgetState.selected)) {
+            return AppColors.mainBrandSoftColor;
+          }
+          return AppColors.dividerColor;
+        }),
+      ),
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: AppColors.mainBrandColor,
+        circularTrackColor: AppColors.mainBrandSoftColor,
+        linearTrackColor: AppColors.mainBrandSoftColor,
+      ),
+      popupMenuTheme: const PopupMenuThemeData(
+        color: AppColors.cardBackgroundColor,
+        surfaceTintColor: AppColors.transparentColor,
+        textStyle: TextStyle(color: AppColors.mainTextColor),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
