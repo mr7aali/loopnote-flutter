@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../app_theme.dart';
-import '../widgets/loop_note_logo.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -58,10 +57,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const LoopNoteLogo(centered: true),
-                      const SizedBox(height: 28),
+                      Image.asset(
+                        'assets/branding/loopnote-splash-logo.png',
+                        height: 220,
+                        fit: BoxFit.contain,
+                        semanticLabel: 'Loop Note',
+                      ),
+                      // const SizedBox(height: 28),
                       const _WelcomeImage(),
-                      const SizedBox(height: 30),
+                      // const SizedBox(height: 30),
                       Text(
                         'Capture notes. Complete loops.',
                         textAlign: TextAlign.center,
@@ -113,23 +117,11 @@ class _WelcomeImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        // color: AppColors.cardBackgroundColor,
-        // borderRadius: BorderRadius.circular(8),
-        // border: Border.all(color: AppColors.borderColor),
-        //   boxShadow: const [
-        //     BoxShadow(
-        //       color: AppColors.appBarShadowColor,
-        //       // blurRadius: 22,
-        //       // offset: Offset(0, 12),
-        //     ),
-        //   ],
-      ),
+
       child: ClipRRect(
-        // borderRadius: BorderRadius.circular(8),
         child: Image.asset(
           'assets/images/welcome-loopnote.png',
-          height: 380,
+          height: 280,
           fit: BoxFit.contain,
         ),
       ),
@@ -149,7 +141,7 @@ class _WelcomeActions extends StatelessWidget {
       children: [
         Expanded(
           child: SizedBox(
-            height: 52,
+            height: 42,
             child: ElevatedButton(
               onPressed: onGetStarted,
               child: const FittedBox(child: Text('Get Started')),
@@ -159,7 +151,7 @@ class _WelcomeActions extends StatelessWidget {
         const SizedBox(width: 12),
         Expanded(
           child: SizedBox(
-            height: 52,
+            height: 42,
             child: OutlinedButton(
               onPressed: onSignIn,
               child: const FittedBox(child: Text('Sign In')),
