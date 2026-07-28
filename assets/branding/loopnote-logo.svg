@@ -1,0 +1,9 @@
+<svg width="900" height="240" viewBox="0 0 900 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="24" y="24" width="192" height="192" rx="42" fill="#0D9488"/>
+  <path d="M142 58H92C78.745 58 68 68.745 68 82V158C68 171.255 78.745 182 92 182H138L172 148V88C172 71.431 158.569 58 142 58Z" fill="#FFFFFF"/>
+  <path d="M138 182V152C138 144.268 144.268 138 152 138H172L138 182Z" fill="#CCFBF1"/>
+  <path d="M84 119C84 93 114 90 132 112C149 133 181 129 181 104C181 86 158 80 145 97C131 114 106 163 84 136C74 124 79 108 96 101" stroke="#0D9488" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 157L128 173L160 141" stroke="#16A34A" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="252" y="143" fill="#134E4A" font-family="Poppins, Arial, sans-serif" font-size="76" font-weight="700">Loop Note</text>
+  <text x="256" y="180" fill="#64748B" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="500">notes, tasks, and follow-through</text>
+</svg>

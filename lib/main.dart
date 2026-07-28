@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 import 'app_theme.dart';
-import 'screens/welcome_screen.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
-  runApp(const TaskLoopApp());
+  runApp(const LoopNoteApp());
 }
 
-class TaskLoopApp extends StatelessWidget {
-  const TaskLoopApp({super.key});
+class LoopNoteApp extends StatelessWidget {
+  const LoopNoteApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TaskLoop',
+      title: 'Loop Note',
       theme: AppTheme.light,
-      home: const WelcomeScreen(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

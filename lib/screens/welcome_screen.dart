@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../app_theme.dart';
+import '../widgets/loop_note_logo.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -57,12 +58,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const _BrandHeader(),
+                      const LoopNoteLogo(centered: true),
                       const SizedBox(height: 28),
                       const _WelcomeImage(),
                       const SizedBox(height: 30),
                       Text(
-                        'Organize your work with clarity.',
+                        'Capture notes. Complete loops.',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.headlineMedium
                             ?.copyWith(
@@ -73,7 +74,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       ),
                       const SizedBox(height: 14),
                       Text(
-                        'Plan tasks, assign work, and keep your day moving from one calm workspace.',
+                        'Turn ideas into tasks, reminders, and finished work from one calm workspace.',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: AppColors.secondaryTextColor,
@@ -105,41 +106,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   }
 }
 
-class _BrandHeader extends StatelessWidget {
-  const _BrandHeader();
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          width: 42,
-          height: 42,
-          decoration: BoxDecoration(
-            color: AppColors.mainBrandSoftColor,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: AppColors.strongBorderColor),
-          ),
-          child: const Icon(
-            Icons.check_rounded,
-            color: AppColors.mainBrandColor,
-            size: 26,
-          ),
-        ),
-        const SizedBox(width: 12),
-        Text(
-          'TaskLoop',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-            color: AppColors.mainTextColor,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 class _WelcomeImage extends StatelessWidget {
   const _WelcomeImage();
 
@@ -162,7 +128,7 @@ class _WelcomeImage extends StatelessWidget {
       child: ClipRRect(
         // borderRadius: BorderRadius.circular(8),
         child: Image.asset(
-          'assets/images/welcome-taskloop.png',
+          'assets/images/welcome-loopnote.png',
           height: 380,
           fit: BoxFit.contain,
         ),
