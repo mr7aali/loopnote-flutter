@@ -148,22 +148,22 @@ class _WelcomeImage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: AppColors.cardBackgroundColor,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.borderColor),
-        boxShadow: const [
-          BoxShadow(
-            color: AppColors.appBarShadowColor,
-            blurRadius: 22,
-            offset: Offset(0, 12),
-          ),
-        ],
+        // color: AppColors.cardBackgroundColor,
+        // borderRadius: BorderRadius.circular(8),
+        // border: Border.all(color: AppColors.borderColor),
+        //   boxShadow: const [
+        //     BoxShadow(
+        //       color: AppColors.appBarShadowColor,
+        //       // blurRadius: 22,
+        //       // offset: Offset(0, 12),
+        //     ),
+        //   ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(8),
+        // borderRadius: BorderRadius.circular(8),
         child: Image.asset(
           'assets/images/welcome-taskloop.png',
-          height: 280,
+          height: 380,
           fit: BoxFit.contain,
         ),
       ),
