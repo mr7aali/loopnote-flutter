@@ -11,6 +11,7 @@ class AppColors {
 
   // Backgrounds and surfaces
   static const pageBackgroundColor = Color(0xFFF8FAFA);
+  static const onboardingBackgroundColor = Color(0xFFFAFAF6);
   static const cardBackgroundColor = Color(0xFFFFFFFF);
   static const elevatedSurfaceColor = Color(0xFFFFFFFF);
   static const sidebarBackgroundColor = Color(0xFFF0FDFA);

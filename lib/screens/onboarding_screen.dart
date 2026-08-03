@@ -44,6 +44,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.onboardingBackgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(24, 18, 24, 24),
@@ -270,73 +271,12 @@ class _OnboardingArtwork extends StatelessWidget {
     return SizedBox(
       width: size,
       height: size,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 420),
-            curve: Curves.easeOut,
-            width: size * 0.82,
-            height: size * 0.82,
-            decoration: BoxDecoration(
-              color: AppColors.mainBrandSoftColor.withValues(alpha: 0.58),
-              shape: BoxShape.circle,
-            ),
-          ),
-          Positioned(
-            top: size * 0.04,
-            right: size * 0.1,
-            child: _FloatingDot(size: size * 0.08),
-          ),
-          Positioned(
-            left: size * 0.04,
-            bottom: size * 0.16,
-            child: _FloatingDot(size: size * 0.055),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(24),
-            child: Image.asset(
-              imagePath,
-              width: size,
-              height: size,
-              fit: BoxFit.contain,
-              filterQuality: FilterQuality.high,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _FloatingDot extends StatelessWidget {
-  const _FloatingDot({required this.size});
-
-  final double size;
-
-  @override
-  Widget build(BuildContext context) {
-    return TweenAnimationBuilder<double>(
-      tween: Tween(begin: 0.0, end: 1.0),
-      duration: const Duration(milliseconds: 1200),
-      curve: Curves.easeInOut,
-      builder: (context, value, child) {
-        return Transform.translate(
-          offset: Offset(0, 5 * (1 - value)),
-          child: Opacity(opacity: 0.7 + (value * 0.3), child: child),
-        );
-      },
-      child: Container(
+      child: Image.asset(
+        imagePath,
         width: size,
         height: size,
-        decoration: BoxDecoration(
-          color: AppColors.mainBrandLightColor.withValues(alpha: 0.22),
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: AppColors.mainBrandLightColor.withValues(alpha: 0.2),
-            width: 1,
-          ),
-        ),
+        fit: BoxFit.contain,
+        filterQuality: FilterQuality.high,
       ),
     );
   }

@@ -62,6 +62,7 @@ flutter:
     # - images/a_dot_burr.jpeg
     - assets/branding/
     - assets/icons/
+    - assets/images/sign-in-secure-notes.png
     - assets/images/
     # - images/a_dot_ham.jpeg
 
