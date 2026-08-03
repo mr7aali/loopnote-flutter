@@ -3,6 +3,8 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../app_theme.dart';
+import 'onboarding_screen.dart';
+import 'sign_in_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -87,10 +89,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       ),
                       const SizedBox(height: 30),
                       _WelcomeActions(
-                        onGetStarted: () =>
-                            _showNextStepMessage(context, 'Get started'),
-                        onSignIn: () =>
-                            _showNextStepMessage(context, 'Sign in'),
+                        onGetStarted: () => _openOnboarding(context),
+                        onSignIn: () => _openSignIn(context),
                       ),
                     ],
                   ),
@@ -103,10 +103,16 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
   }
 
-  void _showNextStepMessage(BuildContext context, String action) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('$action screen will be added next.')),
-    );
+  void _openOnboarding(BuildContext context) {
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (context) => const OnboardingScreen()));
+  }
+
+  void _openSignIn(BuildContext context) {
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (context) => const SignInScreen()));
   }
 }
 
@@ -154,6 +160,7 @@ class _WelcomeActions extends StatelessWidget {
             height: 42,
             child: OutlinedButton(
               onPressed: onSignIn,
+              // style: OutlinedSSButton.styleFrom(side: const BorderSide(width: 2)),
               child: const FittedBox(child: Text('Sign In')),
             ),
           ),
